@@ -98,15 +98,47 @@ function App() {
     setPassword('')
   }
 
+  function handleSignOut() {
+    localStorage.removeItem(SESSION_STORAGE_KEY)
+    setSession(null)
+    setPassword('')
+    setErrorMessage('')
+  }
+
   if (session) {
     return (
       <main className="shell">
+        <header className="app-header">
+          <div className="brand-block">
+            <p className="eyebrow">ProdMag administration</p>
+            <strong className="brand-title">ProdMag Admin</strong>
+          </div>
+
+          <nav className="header-nav" aria-label="Primary navigation">
+            <a href="/" aria-current="page">
+              Dashboard
+            </a>
+            <a href="/">Catalog</a>
+            <a href="/">Orders</a>
+          </nav>
+
+          <div className="profile-block">
+            <div className="profile-copy">
+              <strong>{session.name}</strong>
+              <span>{session.email}</span>
+            </div>
+            <button className="secondary-button" type="button" onClick={handleSignOut}>
+              Sign out
+            </button>
+          </div>
+        </header>
+
         <section className="hero-panel">
-          <p className="eyebrow">ProdMag administration</p>
+          <p className="eyebrow">PM-2</p>
           <h1>Administrator session is active.</h1>
           <p className="lede">
-            PM-1 is in place: the admin can sign in, bad credentials are rejected,
-            and the session is persisted until timeout.
+            The admin header now exposes primary navigation, current user identity,
+            and a direct sign-out action.
           </p>
         </section>
 
