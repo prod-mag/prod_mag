@@ -1,0 +1,69 @@
+:root {
+  font-family:
+    "Avenir Next",
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f3efe6;
+  background:
+    radial-gradient(circle at top left, rgba(247, 178, 103, 0.22), transparent 32%),
+    radial-gradient(circle at right, rgba(215, 38, 61, 0.18), transparent 28%),
+    linear-gradient(180deg, #111111 0%, #17131f 45%, #0c0c10 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --panel: rgba(16, 18, 24, 0.78);
+  --border: rgba(255, 255, 255, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --focus: #f7b267;
+  --focus-ring: rgba(247, 178, 103, 0.16);
+  --muted: #d1a677;
+  --text-strong: #fff5e9;
+  --text-soft: #c6b8aa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw, 5.4rem);
+  line-height: 0.96;
+  color: var(--text-strong);
+  max-width: 10ch;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text-strong);
+}
+
+a {
+  color: inherit;
+}
